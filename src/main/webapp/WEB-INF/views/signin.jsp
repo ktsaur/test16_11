@@ -11,7 +11,7 @@
   <c:if test="${not empty error}">
     <div>${error}</div>
   </c:if>
-<form method="post" action="/login">
+<form method="post" action="/main">
   Login:
   <input type="text" name="login">
   <br>
