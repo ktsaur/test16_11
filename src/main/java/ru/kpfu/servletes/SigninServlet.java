@@ -48,11 +48,11 @@ public class SigninServlet extends HttpServlet {
             } else {
                 userDao.logLoginAttempt(login, false);
 
-                req.setAttribute("error", "Invalid login or password");
-                getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+                req.setAttribute("message", "Неправильный логин или пароль");
+                getServletContext().getRequestDispatcher("/WEB-INF/views/registration.jsp").forward(req, resp);
             }
         } catch (Exception e) {
-            throw new ServletException("Error during login process", e);
+            throw new ServletException("Ошибка", e);
         }
     }
 }

@@ -42,7 +42,7 @@ public class RegistrationServlet extends HttpServlet {
             if (isAdded) {
                 resp.sendRedirect("mainPage.jsp");
             } else {
-                req.setAttribute("error", "Registration failed");
+                req.setAttribute("message", "Регистрация провалена");
                 getServletContext().getRequestDispatcher("/WEB-INF/views/registration.jsp").forward(req, resp);
             }
         } catch (Exception e) {
@@ -51,7 +51,7 @@ public class RegistrationServlet extends HttpServlet {
             } catch (Exception logException) {
                 throw new ServletException(logException);
             }
-            throw new ServletException("Error during registration process", e);
+            throw new ServletException("Ошибка", e);
         }
     }
 }
