@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <h2>Вход</h2>
   <c:if test="${not empty error}">
     <div>${error}</div>
   </c:if>
