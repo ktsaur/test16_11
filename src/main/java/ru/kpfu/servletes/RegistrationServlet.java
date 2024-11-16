@@ -40,7 +40,7 @@ public class RegistrationServlet extends HttpServlet {
             userDao.logLoginAttempt(login, isAdded);
 
             if (isAdded) {
-                resp.sendRedirect("mainPage.jsp");
+                getServletContext().getRequestDispatcher("/WEB-INF/views/signin.jsp").forward(req, resp);
             } else {
                 req.setAttribute("message", "Регистрация провалена");
                 getServletContext().getRequestDispatcher("/WEB-INF/views/registration.jsp").forward(req, resp);
