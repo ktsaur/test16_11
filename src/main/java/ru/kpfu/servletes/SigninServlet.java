@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet("/signin")
+@WebServlet("")
 public class SigninServlet extends HttpServlet {
 
     private UserDao userDao;
@@ -30,6 +30,9 @@ public class SigninServlet extends HttpServlet {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
 
+
+
+
         try {
             User user = userDao.getUser(login, password);
 
@@ -38,6 +41,7 @@ public class SigninServlet extends HttpServlet {
 
                 HttpSession session = req.getSession();
                 session.setAttribute("user", user);
+                session.setAttribute("login", login);
                 session.setMaxInactiveInterval(60 * 60);
 
                 Cookie cookie = new Cookie("user", login);

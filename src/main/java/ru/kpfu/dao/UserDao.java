@@ -59,4 +59,15 @@ public class UserDao {
         }
     }
 
+    public void addCities(String login, String city) {
+            String sql = "INSERT INTO cities (login, city) VALUES (?, ?)";
+            try (PreparedStatement statement = this.connectionProvider.getCon().prepareStatement(sql)) {
+                statement.setString(1, login);
+                statement.setString(2, city);
+                statement.executeUpdate();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+    }
+
 }

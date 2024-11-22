@@ -26,10 +26,9 @@
   <br>
   <br>
 
-  <a href="<c:url value="/signin"/>" >Уже зарегистрированы? Войти</a>
+  Уже зарегистрированы?
+  <a href="<c:url value="/signin"/>" >Войти</a>
 
 </form>
-
 </body>
-
 </html>

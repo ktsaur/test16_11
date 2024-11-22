@@ -23,7 +23,8 @@
   <br>
   <br>
 
-  <a href="<c:url value="/registration"/>"> Еще не зарегистрированы? Зарегистрироваться</a>
+  Еще не зарегистрированы?
+  <a href="<c:url value="/registration"/>"> Зарегистрироваться</a>
 
 </form>
 </body>
